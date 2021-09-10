@@ -1,0 +1,7 @@
+{
+  "**/*.{ts,tsx}": [
+    "tsc --noEmit --jsx react-jsx --esModuleInterop",
+    "eslint --fix",
+    "prettier --write"
+  ]
+}
