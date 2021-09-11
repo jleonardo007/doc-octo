@@ -1,0 +1,40 @@
+.auth {
+  min-height: 100vh;
+  padding-top: 2rem;
+}
+
+.app-title {
+  font-size: 4em;
+  text-align: center;
+  color: #1877f2;
+}
+
+.description {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.error-message {
+  width: 30vw;
+  display: block;
+  margin: 0 auto 1rem auto;
+  text-align: center;
+  color: red;
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .app-title {
+    font-size: 3rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .error-message {
+    width: 100vw;
+    font-size: 1rem;
+  }
+}
