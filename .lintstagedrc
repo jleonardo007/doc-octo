@@ -1,6 +1,6 @@
 {
   "**/*.{ts,tsx}": [
-    "tsc --noEmit --jsx react-jsx --esModuleInterop --baseUrl src",
+    "tsc --noEmit --jsx react-jsx --esModuleInterop --downlevelIteration --baseUrl  src",
     "eslint --fix",
     "prettier --write"
   ]
