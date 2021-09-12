@@ -13,7 +13,7 @@ export type User = {
   __typename: string;
   avatarUrl: string;
   bio: string;
-  createAt: string;
+  createdAt: string;
   login: string;
   name: string;
   repositories: {

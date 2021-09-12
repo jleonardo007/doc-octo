@@ -28,7 +28,7 @@ const initialState: User = {
   __typename: "",
   avatarUrl: "",
   bio: "",
-  createAt: "",
+  createdAt: "",
   login: "",
   name: "",
   repositories: { __typename: "", nodes: [] },
