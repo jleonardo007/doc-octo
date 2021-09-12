@@ -1,6 +1,6 @@
 import { updateProfile } from "firebase/auth";
 import { FirebaseError } from "@firebase/util";
-import { signUp, signIn } from "utils/firebase-auth";
+import { signUp, signIn, logout } from "utils/firebase-auth";
 import { UserCredentials, SetAuthState } from "types/auth";
 
 export async function createUser(
@@ -67,4 +67,28 @@ export async function login({ email, password }: UserCredentials, setAuthState: 
   }
 }
 
-export function logout() {}
+export async function logOut(setAuthState: SetAuthState) {
+  try {
+    await logout();
+    localStorage.removeItem("username");
+    localStorage.removeItem("favRepos");
+    window.location.href = "/";
+
+    setAuthState({
+      username: "",
+      error: "",
+    });
+  } catch (error) {
+    if (error instanceof FirebaseError) {
+      const errorName = error.code;
+
+      console.log(errorName);
+      setAuthState((prevState) => {
+        return {
+          ...prevState,
+          error: errorName,
+        };
+      });
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import { useState, useEffect, useLayoutEffect } from "react";
 import { AuthState, UserCredentials } from "types/auth";
-import { createUser, login } from "handlers/auth";
+import { createUser, login, logOut } from "handlers/auth";
 
 const initialState: AuthState = {
   username: "",
@@ -42,6 +42,9 @@ export default function useAuth() {
     },
     login: (formData: UserCredentials) => {
       login(formData, setAuthState);
+    },
+    logOut: () => {
+      logOut(setAuthState);
     },
   };
 }
