@@ -11,20 +11,22 @@ import useGithubUser from "hooks/use-github-user";
 
 export default function App() {
   const { username, error, createUser, login, logOut } = useAuth();
-  const { user, repoSearch, searchRepo } = useGithubUser(username);
+  const { user, loading, errorMessage, repoSearch, searchRepo } = useGithubUser(username);
 
   return username ? (
     <Router basename="/">
       <Switch>
         <Route path="/profile">
-          <Profile NavBar={<NavBar />} user={user} logOut={logOut} />
+          <Profile user={user} error={errorMessage} logOut={logOut} NavBar={<NavBar />} />
         </Route>
         <Route path="/favorite-repos">
-          <FavoriteRepos NavBar={<NavBar />} />
+          <FavoriteRepos error={errorMessage} NavBar={<NavBar />} />
         </Route>
         <Route path="/">
           <Home
             username={username}
+            error={errorMessage}
+            loading={loading}
             repositories={user.repositories.nodes}
             query={repoSearch.query}
             repos={repoSearch.repos}

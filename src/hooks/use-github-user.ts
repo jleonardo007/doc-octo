@@ -40,17 +40,19 @@ export default function useGithubUser(username: string) {
     query: "",
     repos: initialState.repositories.nodes,
   });
-  const { data } = useQuery(ALL_REPOSITORIES, {
+  const { loading, error, data } = useQuery(ALL_REPOSITORIES, {
     variables: { username: username },
   });
 
   useEffect(() => {
-    if (data) setUser(data.user);
-  }, [data]);
+    if (data && !loading) setUser(data.user);
+  }, [data, loading]);
 
   return {
     user,
     repoSearch,
+    loading,
+    errorMessage: error?.message,
     searchRepo: (e: string) => {
       searchRepo(e, user.repositories.nodes, setRepoSearch);
     },

@@ -5,13 +5,54 @@ import "./styles.css";
 
 type HomeProps = {
   username: string;
+  error: string | undefined;
+  loading: boolean;
   query: string;
   repositories: Repo[];
   repos: Repo[];
   NavBar: ReactNode;
 };
 
-export default function Home({ username, query, repositories, repos, NavBar }: HomeProps) {
+export default function Home({
+  username,
+  error,
+  loading,
+  query,
+  repositories,
+  repos,
+  NavBar,
+}: HomeProps) {
+  if (loading)
+    return (
+      <>
+        {NavBar}
+        <main className="home">
+          <h1 className="welcome-title">Loading...</h1>
+        </main>
+      </>
+    );
+
+  if (error)
+    return (
+      <>
+        {NavBar}
+        <main className="home">
+          <h1 className="label">{error}</h1>
+          <p className="join">
+            Create an account{" "}
+            <a
+              className="join-link"
+              href="https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Here!
+            </a>
+          </p>
+        </main>
+      </>
+    );
+
   return (
     <>
       {NavBar}

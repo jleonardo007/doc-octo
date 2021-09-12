@@ -4,11 +4,22 @@ import ReposList from "components/repos-list";
 import "./styles.css";
 
 type FavoriteReposProps = {
+  error: string | undefined;
   NavBar: ReactNode;
 };
 
-export default function FavoriteRepos({ NavBar }: FavoriteReposProps) {
+export default function FavoriteRepos({ error, NavBar }: FavoriteReposProps) {
   const favRepos: Repo[] = localStorage.favRepos ? JSON.parse(localStorage.favRepos) : [];
+
+  if (error)
+    return (
+      <>
+        {NavBar}
+        <section className="fav-repos">
+          <h1 className="fav-label">{error}</h1>
+        </section>
+      </>
+    );
 
   return (
     <>

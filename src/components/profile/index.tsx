@@ -3,12 +3,30 @@ import { User } from "types/github-user";
 import "./styles.css";
 
 type ProfileProps = {
-  NavBar: ReactNode;
   user: User;
+  error: string | undefined;
+  NavBar: ReactNode;
   logOut: () => void;
 };
 
-export default function Profile({ NavBar, user, logOut }: ProfileProps) {
+export default function Profile({ user, error, NavBar, logOut }: ProfileProps) {
+  if (error)
+    return (
+      <>
+        {NavBar}
+        <section className="profile">
+          <h1 className="profile-label">{error}</h1>
+          <div className="user-info">
+            <div className="info-container">
+              <button className="logout-button" onClick={logOut}>
+                Logout
+              </button>
+            </div>
+          </div>
+        </section>
+      </>
+    );
+
   return (
     <>
       {NavBar}

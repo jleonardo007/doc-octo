@@ -27,6 +27,15 @@
   font-size: 2vw;
 }
 
+.join {
+  font-size: 1.2vw;
+}
+
+.join-link {
+  text-decoration: none;
+  color: #42b72a;
+}
+
 @media screen and (min-width: 320px) and (max-width: 1024px) {
   .home {
     padding: 5vw;
@@ -40,6 +49,10 @@
   .label {
     font-size: 8vw;
     margin-bottom: 5vw;
+  }
+
+  .join {
+    font-size: 4vw;
   }
 
   .no-results-label {
