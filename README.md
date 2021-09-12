@@ -1,6 +1,33 @@
-# Getting Started with Create React App
+# View the live demo [here](https://doc-oct-d9dc4.web.app/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Or if you want run the app at your local machine, follow the steps bellow:
+
+1. Create a firebase project at [firebase console](https://firebase.google.com/docs/web/setup?authuser=0). You get a config object like this one:
+
+```javascript
+const firebaseConfig = {
+  apiKey: "AIzaSyDXBe7M1NIUSGLDBOSaJi1kBgqUevqUj8E",
+  authDomain: "test-project-798c9.firebaseapp.com",
+  projectId: "test-project-798c9",
+  appId: "1:308652753315:web:816682fc3372c169c09a16",
+};
+```
+
+2. Create a Github token [here](https://github.com/settings/tokens) to make requests to GH graphql API.
+
+3. Write the firebaseConfig props and github token to a `.env` file based on the format bellow:
+
+```
+REACT_APP_API_KEY = apiKey
+REACT_APP_AUTH_DOMAIN = authDomain
+REACT_APP_API_PROJECT_ID = projectId
+REACT_APP_API_APP_ID = appId
+REACT_APP_GITHUB_TOKEN = GH token
+```
+
+4. Install packages running `yarn install` in the project directory.
+
+Once above steps are completed you can run the following scripts:
 
 ## Available Scripts
 
@@ -38,9 +65,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
