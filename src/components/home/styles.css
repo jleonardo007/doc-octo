@@ -1,0 +1,48 @@
+.home {
+  min-height: 90vh;
+  padding: 1.2vw;
+  background-color: #fff;
+  color: #1877f2;
+}
+
+.welcome-title {
+  font-size: 3vw;
+  margin-bottom: 2vw;
+}
+
+.label {
+  text-align: center;
+  font-size: 2.4vw;
+  margin-bottom: 1.2vw;
+}
+
+.no-results-container {
+  width: 90vw;
+  min-height: 90vh;
+  margin: 0 auto;
+}
+
+.no-results-label {
+  text-align: center;
+  font-size: 2vw;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+  .home {
+    padding: 5vw;
+  }
+
+  .welcome-title {
+    font-size: 8vw;
+    margin-bottom: 5vw;
+  }
+
+  .label {
+    font-size: 8vw;
+    margin-bottom: 5vw;
+  }
+
+  .no-results-label {
+    font-size: 6vw;
+  }
+}

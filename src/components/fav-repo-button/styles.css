@@ -1,0 +1,22 @@
+.fav-button:hover svg {
+  color: red;
+}
+
+.fav-button {
+  width: 5vw;
+  height: 5vw;
+  display: grid;
+  place-content: center;
+  border: none;
+  font-size: 3vw;
+  background: none;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+  .fav-button {
+    width: 12vw;
+    height: 12vw;
+    font-size: 10vw;
+  }
+}

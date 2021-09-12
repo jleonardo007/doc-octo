@@ -1,0 +1,29 @@
+.search-bar {
+  width: 40%;
+}
+
+.search-input {
+  width: 80%;
+  height: 1.8vw;
+  padding-left: 2.4vw;
+  border: none;
+  border-radius: 0.6vw;
+  font-size: 1.5vw;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+  .search-bar {
+    width: 100%;
+    margin-top: 5vw;
+  }
+
+  .search-input {
+    display: block;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    padding-left: 5vw;
+    border-radius: 2.5vw;
+    font-size: 5vw;
+  }
+}

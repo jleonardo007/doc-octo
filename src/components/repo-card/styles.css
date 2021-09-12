@@ -1,0 +1,64 @@
+.repo {
+  width: 40vw;
+  min-height: 12vh;
+  display: flex;
+  border: 2px solid #1877f2;
+  border-radius: 0.6vw;
+  background-color: #fff;
+  color: #1877f2;
+  cursor: pointer;
+}
+
+.repo-info:hover h2 {
+  color: #42b72a;
+}
+
+.repo-info {
+  width: 80%;
+  padding: 1.2vw;
+}
+
+.repo-info h2 {
+  font-size: 1.8vw;
+}
+
+.repo-info p {
+  font-size: 1.2vw;
+}
+
+.repo-info h2,
+.repo-info p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.repo-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.fav-button-container {
+  width: 20%;
+  display: grid;
+  place-content: center;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+  .repo {
+    width: 100%;
+    border-radius: 2.5vw;
+  }
+
+  .repo-info {
+    padding: 1rem;
+  }
+
+  .repo-info h2 {
+    font-size: 5vw;
+  }
+
+  .repo-info p {
+    font-size: 4vw;
+  }
+}
